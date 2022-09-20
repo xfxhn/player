@@ -1,0 +1,6 @@
+﻿<RCC>
+    <qresource prefix="/shader">
+        <file alias="video.vert">C:/Users/Administrator/Desktop/player/bofangqi/shader/video.vert</file>
+        <file alias="video.frag">C:/Users/Administrator/Desktop/player/bofangqi/shader/video.frag</file>
+    </qresource>
+</RCC>

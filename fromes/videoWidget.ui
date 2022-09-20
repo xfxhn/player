@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QWidget" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>773</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>肖锋</string>
+  </property>
+  <widget class="VideoWidget" name="openGLWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>720</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>580</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>670</y>
+     <width>1231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>999</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="playbtn">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>582</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>播放</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>580</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>1.0倍速</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>580</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>1.5倍速</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>580</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2.0倍速</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VideoWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>videoWidget.h</header>
+   <slots>
+    <slot>handlerChangeSpeed()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>openFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>playbtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>changePlayState()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>542</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>progressBar</sender>
+   <signal>sliderPressed()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>sliderPress()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>719</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>635</x>
+     <y>725</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>progressBar</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>sliderRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>812</x>
+     <y>681</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1108</x>
+     <y>645</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openFile()</slot>
+  <slot>changePlayState()</slot>
+  <slot>sliderPress()</slot>
+  <slot>sliderRelease()</slot>
+  <slot>sliderChangeValue()</slot>
+ </slots>
+</ui>
