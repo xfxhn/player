@@ -4,7 +4,8 @@ project(player VERSION 0.1)
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     #[[msvc编译器要添加这两个编译选项]]
     #  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:CONSOLE /ENTRY:mainCRTStartup")
-    add_compile_options("/Zc:__cplusplus" "/permissive-")
+    add_compile_options("/Zc:__cplusplus" "/permissive-" "/utf-8")
+    #    add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 endif ()
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
@@ -12,8 +13,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 else ()
     set(CMAKE_PREFIX_PATH D:/softwares/qt/5.15.2/mingw81_64)
 endif ()
-
-
 
 
 #[[设置查找UI文件的路径 AUTOUIC处理]]

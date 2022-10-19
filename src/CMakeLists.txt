@@ -31,7 +31,6 @@ endif ()
 target_include_directories(player
         PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/openglWidget
         )
-
 target_link_directories(player
         PRIVATE ${PROJECT_SOURCE_DIR}/lib
         )
@@ -53,19 +52,15 @@ target_link_libraries(player
         Qt${QT_VERSION_MAJOR}::Widgets
         $<$<STREQUAL:${QT_VERSION_MAJOR},6>:OpenGLWidgets>
         )
-
-
 set_target_properties(player PROPERTIES
         MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
         MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
         MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
         #[[当在 iOS 上构建时将此属性设置为TRUE可执行文件时，将创建为应用程序包]]
         MACOSX_BUNDLE TRUE
-
         #[[在 Windows 上链接的可执行文件将使用 WinMain() 入口点创建，而不仅仅是 main()]]
         WIN32_EXECUTABLE TRUE
         )
-
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     #LINK_FLAGS_DEBUG /SUBSYSTEM:CONSOLE
     target_link_options(player PRIVATE $<$<CONFIG:Debug>:/SUBSYSTEM:CONSOLE>)

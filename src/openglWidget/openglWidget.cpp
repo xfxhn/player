@@ -6,9 +6,9 @@
 OpenglWidget::OpenglWidget(QWidget* parent)
 	: QWidget(parent), ui(new Ui::mainWindow) {
 
-	[&]() {
+	/*[&]() {
 		setPause();
-	};
+	};*/
 	ui->setupUi(this);
 
 
